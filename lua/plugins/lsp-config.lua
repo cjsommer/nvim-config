@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "powershell_es" }
+        ensure_installed = { "lua_ls", "powershell_es", "terraformls" }
       })
     end
   },
@@ -18,6 +18,7 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup({})
+
       lspconfig.powershell_es.setup({
         filetypes = {"ps1", "psm1", "psd1"},
         bundle_path = "~/AppData/Local/nvim-data/mason/packages/powershell-editor-services",
@@ -26,6 +27,8 @@ return {
           enableProfileLoading = false,
         },
       })
+
+      lspconfig.terraformls.setup({})
 
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
