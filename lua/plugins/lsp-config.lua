@@ -21,7 +21,10 @@ return {
       lspconfig.powershell_es.setup({
         filetypes = {"ps1", "psm1", "psd1"},
         bundle_path = "~/AppData/Local/nvim-data/mason/packages/powershell-editor-services",
-        settings = { powershell = { codeFormatting = { Preset = 'OTBS' } } }
+        settings = { powershell = { codeFormatting = { Preset = 'OTBS' } } },
+        init_options = {
+          enableProfileLoading = false,
+        },
       })
 
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
