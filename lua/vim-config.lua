@@ -9,7 +9,7 @@ vim.cmd("set relativenumber")
 vim.g.mapleader = " "
 
 -- Levels by name: "TRACE", "DEBUG", "INFO", "WARN", "ERROR", "OFF"
-vim.lsp.set_log_level("INFO")
+vim.lsp.set_log_level("WARN")
 
 vim.diagnostic.config({
   virtual_text = false,
